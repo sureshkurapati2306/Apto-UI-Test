@@ -1,0 +1,12 @@
+<div class="custom-dropdown">
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    {{ selectedOption || placeholder }}
+    <img src="./assets/arrow.svg" alt="arrow" [class.arrow-up]="isArrowUp" [class.arrow-down]="!isArrowUp">
+  </div>
+  <div class="dropdown-options" *ngIf="isDropdownOpen">
+    <div class="option" *ngFor="let option of options" [class.selected]="selectedOption === option"
+      (click)="selectOption(option)">
+      {{ option }}
+    </div>
+  </div>
+</div>
